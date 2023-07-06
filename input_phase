@@ -12,6 +12,7 @@ def encrypt(plain_text, shift_amount):
     position = alphabet.index(i)
     if i in alphabet:
       whole_move = position + shift
+#Solving bug where if alphabet index gets exceeded, program will stop with an error. Could also be solved with doubling the alphabets content.
       if whole_move >= 26:
         whole_move -= 26
       cipher_text.append(alphabet[whole_move])
