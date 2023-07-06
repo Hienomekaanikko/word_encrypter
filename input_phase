@@ -1,0 +1,21 @@
+alphabet = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z']
+
+direction = input("Type 'encode' to encrypt, type 'decode' to decrypt:\n")
+text = input("Type your message:\n").lower()
+shift = int(input("Type the shift number:\n"))
+
+#v1 of the program
+
+def encrypt(plain_text, shift_amount):
+  cipher_text = []
+  for i in plain_text:
+    position = alphabet.index(i)
+    if i in alphabet:
+      whole_move = position + shift
+      if whole_move >= 26:
+        whole_move -= 26
+      cipher_text.append(alphabet[whole_move])
+  print(f"The endoded text is {cipher_text}")
+encrypt(plain_text=text , shift_amount=shift)
+
+ 
